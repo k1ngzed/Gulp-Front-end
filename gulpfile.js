@@ -43,6 +43,7 @@ var path = {
     clean: './build'
 };
 
+// Свойство (open: включает/true, выключает/false) запуск ссылки локального хоста.
 var config = {
     server: {
         baseDir: "./build"
@@ -51,14 +52,16 @@ var config = {
     host: 'localhost',
     port: 9000,
     notify: false,
-    open: false,
+    open: false, 
     logPrefix: "KingZ"
 };
 
+// Веб сервер
 gulp.task('webserver', function () {
     browserSync(config);
 });
 
+// Очистка файла build "gulp clean"
 gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
 });
@@ -100,11 +103,13 @@ gulp.task('image:build', function () {
         .pipe(reload({stream: true}));
 });
 
+// Перенос файла с шрифтами
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts))
 });
 
+// Перенос файла libs
 gulp.task('libs:build', function() {
     gulp.src(path.src.libs)
         .pipe(gulp.dest(path.build.libs))
@@ -119,7 +124,8 @@ gulp.task('build', [
     'image:build'
 ]);
 
-
+// Проверка на изменения всех нужных нам файлов.
+// При случаи изменения, дополнить измененный файл.
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
         gulp.start('html:build');
@@ -141,11 +147,5 @@ gulp.task('watch', function(){
     });
 });
 
-
+// Дефолтный запуск "gulp"
 gulp.task('default', ['build', 'webserver', 'watch']);
-
-// gulp
-// Для запуска пакетов!
-
-// gulp clean
-// Для запуска очистки файла build
