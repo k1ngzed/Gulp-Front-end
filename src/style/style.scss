@@ -1,0 +1,99 @@
+// Colors
+$dark:#333;
+$white:#fff;
+$grey:#666;
+
+// Fonts
+$fontRR: "RobotoRegular", sans-serif;
+$fontRL: "RobotoLight", sans-serif;
+$fontRM: "RobotoMedium", sans-serif;
+$fontRB: "RobotoBold", sans-serif;
+
+// Font icon Font Awesome
+$fontFA: 'FontAwesome';
+
+*::-webkit-input-placeholder {
+    color: $grey;
+    opacity: 1;
+}
+*:-moz-placeholder {
+    color: $grey;
+    opacity: 1;
+}
+*::-moz-placeholder {
+    color: $grey;
+    opacity: 1;
+}
+*:-ms-input-placeholder {
+    color: $grey;
+    opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+    
+}
+body input:required:valid,
+body textarea:required:valid {
+    
+}
+
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 320px;
+    height: 100vh;
+    font-family: $fontRR;
+    font-size: 16px;
+}
+
+strong {
+  color: $dark;
+}
+img {
+  max-width: 100%;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+ul ul,
+ol ul {
+  margin-left: 15px;
+}
+
+.wrapper {
+    min-height: 1px;
+    flex: 1 0 auto;
+    // content
+
+}
+.footer {
+    flex-shrink: 0;
+    // footer
+}
+
+
+// other
+    // display
+    .d-inline-block {
+      display: inline-block;
+    }
+    .d-block {
+      display: block;
+    }
+    .d-none {
+      display: none;
+    }
+    .w-100 {
+      width: 100%;
+    }
+    // Text-decoration
+    .text-underline {
+      text-decoration: underline;
+    }
